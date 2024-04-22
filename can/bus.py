@@ -22,8 +22,6 @@ from typing import (
     cast,
 )
 
-from typing_extensions import Self
-
 import can
 import can.typechecking
 from can.broadcastmanager import CyclicSendTaskABC, ThreadBasedCyclicSendTask
@@ -467,7 +465,7 @@ class BusABC(metaclass=ABCMeta):
         self._is_shutdown = True
         self.stop_all_periodic_tasks()
 
-    def __enter__(self) -> Self:
+    def __enter__(self):
         return self
 
     def __exit__(
