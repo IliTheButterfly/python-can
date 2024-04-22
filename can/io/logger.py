@@ -22,8 +22,6 @@ from typing import (
     cast,
 )
 
-from typing_extensions import Self
-
 from .._entry_points import read_entry_points
 from ..message import Message
 from ..typechecking import AcceptedIOType, FileLike, StringPathLike
@@ -283,7 +281,7 @@ class BaseRotatingLogger(MessageWriter, ABC):
         """
         self.writer.stop()
 
-    def __enter__(self) -> Self:
+    def __enter__(self):
         return self
 
     def __exit__(

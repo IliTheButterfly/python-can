@@ -16,8 +16,6 @@ from typing import (
     cast,
 )
 
-from typing_extensions import Self
-
 from .. import typechecking
 from ..listener import Listener
 from ..message import Message
@@ -66,7 +64,7 @@ class BaseIOHandler(ContextManager, metaclass=ABCMeta):
         # for multiple inheritance
         super().__init__()
 
-    def __enter__(self) -> Self:
+    def __enter__(self):
         return self
 
     def __exit__(
